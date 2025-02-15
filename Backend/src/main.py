@@ -28,7 +28,6 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup():
-
   pass
 
 #終了時
@@ -42,4 +41,5 @@ async def root():
 
 @app.get("/get-pubip")
 async def get_pubip():
-  return {"code":apprun_endpoint}
+  pub_ip = requests.get(apprun_endpoint)
+  return pub_ip.json()
