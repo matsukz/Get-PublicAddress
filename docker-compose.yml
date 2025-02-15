@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:1.27.0
+    container_name: remoteMyIP_nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+
+  # cloudflared:
+  #   image: cloudflare/cloudflared
+  #   container_name: remoteMyIP_cloudflared
+  #   command: tunnel run
+  #   env_file:
+  #     - ./cloudflared/.env
+
+  fastapi:
+    container_name: remoteMyIP_fastapi
+    build: Backend/
+    ports:
+      - 9004:9004
+    volumes:
+      - ./Backend/src:/src
+    working_dir: /src
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 9004
+    environment:
+      - TZ=Asia/Tokyo
