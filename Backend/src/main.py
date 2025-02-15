@@ -3,6 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 import requests
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+apprun_endpoint = os.getenv("apprun_endpoint")
 
 description = """
   自分のグローバルアドレスを返すAPI
@@ -33,3 +38,8 @@ async def shutdown():
 @app.get("/")
 async def root():
   return {"code":"OK!"}
+
+@app.get("/get-pubip")
+async def get_pubip():
+  pub_ip = requests.get(apprun_endpoint)
+  return pub_ip.json()

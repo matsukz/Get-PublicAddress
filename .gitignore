@@ -1,2 +1,2 @@
-cloudflared/.env
+*.env
 *.pyc
