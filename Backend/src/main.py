@@ -9,6 +9,8 @@ import os
 load_dotenv()
 apprun_endpoint = os.getenv("apprun_endpoint")
 
+nginx_pass = "/rmip/api"
+
 description = """
   自分のグローバルアドレスを返すAPI
   """
@@ -39,7 +41,7 @@ async def shutdown():
 async def root():
   return {"code":"OK!"}
 
-@app.get("/get-pubip")
+@app.get(f"{nginx_pass}/get-pubip")
 async def get_pubip():
   pub_ip = requests.get(apprun_endpoint)
   return pub_ip.json()
