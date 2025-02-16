@@ -8,12 +8,12 @@ services:
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
 
-  # cloudflared:
-  #   image: cloudflare/cloudflared
-  #   container_name: remoteMyIP_cloudflared
-  #   command: tunnel run
-  #   env_file:
-  #     - ./cloudflared/.env
+  cloudflared:
+    image: cloudflare/cloudflared
+    container_name: remoteMyIP_cloudflared
+    command: tunnel run
+    env_file:
+      - ./cloudflared/.env
 
   fastapi:
     container_name: remoteMyIP_fastapi
