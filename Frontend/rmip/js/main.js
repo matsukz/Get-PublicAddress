@@ -12,7 +12,8 @@ $(document).ready(function(){
         change_status("myIP",response.SrcIP);
         change_status("apiTime"," API時間：" + formatDate(response.Date.date));
     }).fail(function(response_status){
-        console.log("myIP","API疎通エラー");
+        change_status("myIP","API疎通エラー");
+        change_status("apiTime","API疎通エラー");
     })
 
     //テキスト置換用の関数（？）
