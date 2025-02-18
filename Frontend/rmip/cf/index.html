@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js""></script>
+        <title>自宅のグローバルIPアドレス</title>
+    </head>
+    <body>
+        
+        <br>
+        <h1 class="text-center">自宅のグローバルIPアドレス</h1>
+        <br>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+
+                <div class="col-8 col-mb-12">
+                    <div class="text-center"></div>
+                    <div class="text-center">自宅のグローバルIPアドレスは</div>
+
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status" id="spinner01">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="fs-1 fw-bolder" id="myIP" hidden></p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status" id="spinner02">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="text-center" id="updateTime" hidden></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js" type="module"></script>
+
+    </body>
+</html>
