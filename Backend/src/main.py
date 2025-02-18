@@ -48,3 +48,11 @@ async def get_pubip():
     return pub_ip_result.json()
   else:
     raise HTTPException(status_code=pub_ip_result.status_code, detail="Server Error!")
+  
+@app.get("/rmip/api/cf/getIP")
+async def get_cf_getIP():
+  pub_ip_result = requests.get("https://hono-return-httpheader.ma2kz-project.workers.dev/headers/api/scrip")
+  if pub_ip_result.status_code == 200:
+    return pub_ip_result.json()
+  else:
+    raise HTTPException(status_code=pub_ip_result.status_code, detail="Server Error!")
