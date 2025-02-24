@@ -18,7 +18,6 @@ $(document).ready(function(){
         document.getElementById("spinner01").hidden = true;
         document.getElementById("myIP").hidden = false;
 
-        document.getElementById("spinner02").hidden = true;
         document.getElementById("updateTime").hidden = false;      
 
     }).fail(function(response_status){
@@ -29,7 +28,6 @@ $(document).ready(function(){
         document.getElementById("spinner01").hidden = true;
         document.getElementById("myIP").hidden = false;
 
-        document.getElementById("spinner02").hidden = true;
         document.getElementById("table").hidden = false;
 
     })
